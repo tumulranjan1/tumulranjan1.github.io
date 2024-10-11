@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Tumul's Portfolio</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .project-card {
+        background: var(--secondary-color);
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .project-details {
+        padding: 20px;
+        color: var(--text-color);
+      }
+
+      .project-details h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .project-details p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="intro-section animate__animated animate__fadeIn">
+        <h1>Projects</h1>
+        <p>Check out some of the projects I've worked on:</p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="images/SNGAN.jpg" alt="Task Management Web App">
+            <div class="project-details">
+              <h2>Spectral Normalized Generative AI Models</h2>
+              <p>A web application to efficiently interpolate medical imaging datasets.</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="images/Hybrid.jpg" alt="Responsive Portfolio Website">
+            <div class="project-details">
+              <h2>Hybrid Deep Learning Models</h2>
+              <p>AI application harnessing power of Hybrid Deep Learning Models to detect diseases</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="images/VAC.webp" alt="E-commerce Application">
+            <div class="project-details">
+              <h2>Quantum Encrypted E-Mail Client</h2>
+              <p>E-Mail Client which makes use of Quantum Encryption to encrypt sensitive E-Mails..</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="images/malware.webp" alt="E-commerce Application">
+            <div class="project-details">
+              <h2>AI based Malware Detection</h2>
+              <p>AI application which can detect websites with malware using the website link</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="images/face.webp" alt="E-commerce Application">
+            <div class="project-details">
+              <h2>AI based Face Detection</h2>
+              <p>AI application which can efficiently detect faces it is trained on.</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="images/Mask.webp" alt="E-commerce Application">
+            <div class="project-details">
+              <h2>AI based Mask Detection</h2>
+              <p>AI application which can efficiently detect if the user is wearing a mask or not.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

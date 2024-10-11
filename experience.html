@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience - Tumul's Portfolio</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Timeline Container */
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 40px;
+      }
+
+      /* Timeline Line */
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: var(--accent-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+      }
+
+      /* Timeline Items */
+      .timeline-item {
+        width: calc(50% - 50px);
+        position: relative;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: var(--secondary-color);
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: var(--accent-color);
+        border: 4px solid var(--bg-color);
+        border-radius: 50%;
+        top: 20px;
+        z-index: 1;
+      }
+
+      /* Item Positioning */
+      .timeline-item.left {
+        left: 0;
+      }
+
+      .timeline-item.right {
+        left: calc(50% + 50px);
+      }
+
+      .timeline-item.left::after {
+        right: -58px;
+      }
+
+      .timeline-item.right::after {
+        left: -58px;
+      }
+
+      /* Text Styles */
+      .timeline-item h3 {
+        font-size: 1.4rem;
+        color: var(--accent-color);
+        margin: 0 0 10px 0;
+      }
+
+      .timeline-item h4 {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        margin-bottom: 10px;
+        font-weight: normal;
+      }
+
+      .timeline-item p {
+        margin: 10px 0;
+        color: var(--text-color);
+      }
+
+      /* Responsive Positioning */
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: calc(100% - 80px);
+          padding: 20px;
+        }
+
+        .timeline-item.left,
+        .timeline-item.right {
+          left: 70px;
+        }
+
+        .timeline-item.left::after,
+        .timeline-item.right::after {
+          left: -58px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="intro-section animate__animated animate__fadeIn">
+        <h1>Experience</h1>
+        <p>Here's a timeline of my professional experience:</p>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item left">
+            <h3>Research Fellow</h3>
+            <h4>Defence Research Development Organisation, Ministry of Defence</h4>
+            <p><strong>Duration:</strong> May 2022 - July 2022</p>
+            <p>
+              - Reduced smog interference on IR systems, improving detection accuracy by 40%.<br>
+              - Simulated IR detection systems in MATLAB and Python, enhancing system reliability by 15%.
+            </p>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item right">
+            <h3>SDE Intern</h3>
+            <h4>Centre for Railway Information Systems, Ministry of Railways</h4>
+            <p><strong>Duration:</strong> May 2023 - July 2023</p>
+            <p>
+              - Built an employee kiosk for recording login times, increasing data accuracy.<br>
+              - Developed a fatigue monitoring system, optimizing duty assignment and improving efficiency by 10%.
+            </p>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item left">
+            <h3>Software Engineering Intern</h3>
+            <h4>Tech Mahindra - Comviva</h4>
+            <p><strong>Duration:</strong> June 2024 - July 2024</p>
+            <p>
+              - Designed and deployed a document management API, improving processing speed by 20% for Comviva's Digital Payments platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

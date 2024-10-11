@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tumul's Portfolio</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="floating-shapes">
+      <!-- Shapes will be added by JavaScript -->
+    </div>
+
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="intro-section">
+        <div class="ai-gif" style="text-align: center; padding-top: 20px;">
+          <img src="images/3d-isometric-lettering-artificial-intelligence-with-robot-and-hand-holding-the-brain-text.gif" alt="AI Illustration" style="max-width: 100%; height: auto; border-radius: 10px;">
+        </div>
+        <div class="greeting animate__animated animate__fadeIn">
+          <h1>Hi, my name is Tumul!</h1>
+          <span class="wave">👋</span>
+        </div>              
+      </div>
+    </div>
+
+    <script>
+      // Create floating shapes
+      function createShapes() {
+        const shapes = document.querySelector(".floating-shapes");
+        const numberOfShapes = 15;
+
+        for (let i = 0; i < numberOfShapes; i++) {
+          const shape = document.createElement("div");
+          shape.classList.add("shape");
+
+          // Random size between 20 and 100
+          const size = Math.random() * 80 + 20;
+          shape.style.width = `${size}px`;
+          shape.style.height = `${size}px`;
+
+          // Random position
+          shape.style.left = `${Math.random() * 100}vw`;
+          shape.style.top = `${Math.random() * 100}vh`;
+
+          // Random animation duration
+          shape.style.animationDuration = `${Math.random() * 20 + 10}s`;
+
+          shapes.appendChild(shape);
+        }
+      }
+
+      // Initialize shapes
+      createShapes();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        barba.init({
+          transitions: [
+            {
+              name: 'fade-transition',
+              leave(data) {
+                // Animation for leaving the current page
+                return gsap.to(data.current.container, {
+                  opacity: 0,
+                  duration: 0.5,
+                  ease: "power2.out"
+                });
+              },
+              enter(data) {
+                // Animation for entering the new page
+                return gsap.from(data.next.container, {
+                  opacity: 0,
+                  duration: 0.5,
+                  ease: "power2.in"
+                });
+              }
+            }
+          ]
+        });
+      });
+    </script>
+  </body>
+</html>
